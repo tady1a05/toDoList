@@ -8,7 +8,7 @@ function createList(text, checked, opacity) {
     return $("<li/>").css("opacity", opacity).append($("<div/>", { class: "section-list-head" }).append(
         $("<div/>", { class: "section-list-decoration" }),
         $("<input/>", { type: "checkbox" }).prop("checked", checked)),
-        $("<div/>", { class: "section-list-middle", text: text }),
+        $("<div/>", { class: "section-list-middle", text: text }).attr("contenteditable", "true"),
         $("<div/>", { class: "section-list-last" }).append(
             $("<div/>", { class: "section-list-delete" }).append(
                 $("<div/>", { class: "section-list-delete-circle" })
@@ -107,6 +107,18 @@ function createEvent() {
             setDoneRecord(getDoneListLength());
         }
     })
+
+    //change the value in the middle
+    $(".doing-section-list").on("blur", ".section-list-middle", function () {
+        var index = getIndexOfElement(".doing-section-list", ".section-list-middle", this);
+        setDoingContent(index, $(this).text());
+    })
+
+    $(".done-section-list").on("blur", ".section-list-middle", function () {
+        var index = getIndexOfElement(".done-section-list", ".section-list-middle", this);
+        setDoneContent(index, $(this).text());
+    })
+
 }
 
 function retrieveData() {
@@ -203,6 +215,20 @@ function setDoingRecord(num) {
 
 function setDoneRecord(num) {
     $(".done-section-head-record").text(num);
+}
+
+function setDoingContent(index, new_text) {
+    var Data = JSON.parse(localStorage.getItem("doing-list"));
+    Data[index] = {text: new_text};
+    localStorage.setItem("doing-list", JSON.stringify(Data));
+    console.log(JSON.parse(localStorage.getItem("doing-list")))
+}
+
+function setDoneContent(index, new_text) {
+    var Data = JSON.parse(localStorage.getItem("done-list"));
+    Data[index] = {text: new_text};
+    localStorage.setItem("done-list", JSON.stringify(Data));
+    console.log(JSON.parse(localStorage.getItem("done-list")))
 }
 
 
