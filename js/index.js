@@ -51,7 +51,7 @@ function createEvent() {
     })
 
     $(".doing-section-list").on("click", ".section-list-delete", function () {
-        var index = getIndexOfElement(".doing-section-list", 'section-list-delete', this);
+        var index = getIndexOfElement(".doing-section-list", '.section-list-delete', this);
 
         deleteDoingData(index);
         setDoingRecord(getDoingListLength());
@@ -60,7 +60,7 @@ function createEvent() {
     })
 
     $(".done-section-list").on("click", ".section-list-delete", function () {
-        var index = getIndexOfElement(".done-section-list", 'section-list-delete', this);
+        var index = getIndexOfElement(".done-section-list", '.section-list-delete', this);
 
         deleteDoneData(index);
         setDoneRecord(getDoneListLength());
