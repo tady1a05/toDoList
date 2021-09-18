@@ -1,0 +1,142 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: #cdcdcd;
+}
+
+.header{
+    display: flex;
+    height: 50px;
+    background-color: #323232;
+    justify-content: center;
+}
+
+.header-content{
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-content-label{
+    color: white;
+    font-size: 26px;
+}
+
+.header-content-input{
+    width: 100%;
+    max-width: 356px;
+    height: 26px;
+    outline: none;
+    border-radius: 10px;
+    text-indent: 1em;
+}
+
+.content{
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: auto;
+}
+
+div[class$="section"]{
+    margin-top: 26px;
+}
+
+span[class*="section-head-title"]{
+   font-size: 26px;
+   font-weight: 600;
+}
+
+div[class*="section-head-record"]{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #e6e6fa;
+    text-align: center;
+    line-height: 20px;
+}
+
+div[class$="section-head"]{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul[class*="section-list"]{
+    list-style: none;
+}
+
+ul[class$="section-list"] > li{
+    display: flex;
+    width: 100%;
+    background-color: white;
+    min-height: 32px;
+    margin-top: 10px;
+}
+
+div[class$='section-list-head']{
+    display: flex;
+    width: 50px;
+    align-items: center;
+}
+
+div[class$='section-list-middle']{
+    flex: 1;
+    line-break: anywhere;
+    display: flex;
+    align-items: center;
+}
+
+div[class$='section-list-last']{
+    display: flex;
+    width: 30px;
+    align-items: center;
+}
+
+div[class$="section-list-decoration"]{
+    width: 5px;
+    background-color: #629a9c;
+    height: 100%;
+}
+
+input[type="checkbox"]{
+    width: 22px;
+    height: 22px;
+    margin-left: 14px;
+}
+
+div[class$="section-list-delete"]{
+    box-sizing: border-box;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #cccccc;
+    background-color: white;
+}
+
+div[class$="section-list-delete"]:hover{
+    cursor: pointer;
+}
+
+div[class$="section-list-delete-circle"]{
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: #cccccc;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.copyright{
+    margin-top: 20px;
+    text-align: center;
+}
